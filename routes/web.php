@@ -11,6 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/', [
+	'uses' => 'HomeController@index' ,
+	'as'   => 'home'
+]);
+
+Route::get('/alert',function(){
+  return redirect('/')->with('info','You have signed up');
 });
